@@ -27,7 +27,6 @@ public class PhoneNumber implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
         PhoneNumber phoneNumber = (PhoneNumber) target;
         String number = phoneNumber.getNumber();
         ValidationUtils.rejectIfEmpty(errors, "number", "number.empty");

@@ -22,6 +22,7 @@ public class PhoneController {
     public String checkValidation (@Valid @ModelAttribute("phoneNumber")PhoneNumber phoneNumber, BindingResult bindingResult, Model model){
         new PhoneNumber().validate(phoneNumber, bindingResult);
         if (bindingResult.hasFieldErrors()){
+            model.addAttribute("phoneNumber", new PhoneNumber());
             return "/index";
         }
         else {
